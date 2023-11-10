@@ -1,0 +1,20 @@
+{
+    "name": "Coupon Sleuth",
+    "version": "1.0",
+    "description": "Searches for the coupons accross the web for you",
+    "permissions": ["activeTab", "tabs"],
+    "host_permissions": ["*://*/"],
+    "background": {
+      "service_worker": "firebase.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/"],
+        "js": ["app.js"],
+        "css": ["coupon.css"],
+        "run_at": "document_end"
+      }
+    ],
+  
+    "manifest_version": 3
+  }
